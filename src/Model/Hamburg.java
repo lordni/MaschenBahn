@@ -9,7 +9,6 @@ import java.util.Queue;
 public class Hamburg
 {
     Queue<Wagon> trackArrival= new LinkedList<>();
-    int counter = 0;
 
     // Creates all of our tracks
     public Hamburg(){
@@ -19,15 +18,14 @@ public class Hamburg
     }
 
     public void showDetails() {
-       for (Wagon wagon: trackArrival) {
+        int counter = 0;
+        for (Wagon wagon: trackArrival) {
+            if (counter%10 != 0 || counter == 0) {
                 System.out.print(wagon + ", ");
-                counter++;
-                if(counter == 10)
-                {
-                    System.out.print("\n");
-                    counter = 0;
-                }
-
-       }
+            } else {
+                System.out.println(wagon);
+            }
+            counter++;
+        }
     }
 }
