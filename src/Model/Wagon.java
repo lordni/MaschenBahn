@@ -12,4 +12,10 @@ public class Wagon
     public Wagon(){
         destination = Destination.getDestination();
     }
+
+    @Override
+    public String toString()
+    {
+        return destination;
+    }
 }

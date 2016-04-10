@@ -16,4 +16,10 @@ public class Hamburg
             trackArrival.offer(new Wagon());
         }
     }
+
+    public void showDetails() {
+       for (Wagon wagon: trackArrival) {
+           System.out.println(wagon);
+       }
+    }
 }
