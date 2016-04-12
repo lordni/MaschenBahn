@@ -20,7 +20,7 @@ public class Hamburg
     public void showDetails() {
         int counter = 0;
         for (Wagon wagon: trackArrival) {
-            if (counter%10 != 0 || counter == 0) {
+            if (counter%20 != 0 || counter == 0) {
                 System.out.print(wagon + ", ");
             } else {
                 System.out.println(wagon);
