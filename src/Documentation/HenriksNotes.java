@@ -7,8 +7,77 @@ public class HenriksNotes
 {
     /*
 
+    ----------
+    STRUKTUR OG FUNDAMENT:
+    ----------
+
+    3 faser:
+
+    - Arrival-fasen:
+
+    1 liste med 10 Queue objekter
+        arrivalTrack1, arrivalTrack2, arrivalTrack3, arrivalTrack4, arrivalTrack5,
+        arrivalTrack6, arrivalTrack7, arrivalTrack8, arrivalTrack9, arrivalTrack10
+
+    Vi spawner vores Wagon objekter i disse køer - vilkårligt eller organiseret? Vi kan starte med at spawne 100 (10 i hver Queue, så er de fulde),
+    og eventuelt bare fylde på som vi fjerner togene op i næste fase.
+
+
+    - Sorting-fasen:
+
+    1 Queue objekt
+        sortingTrack
+
+    Denne Queue modtager Wagon objekter fra vores Arrivals, grupperet sammen efter destination, og gerne så logisk som muligt. Dette betyder, at vi skal kunne
+    slå indholdet af SAMTLIGE Queue-objekter op, og finde ud af hvad der passer bedst. Giver det mest mening at sende Wagon-objekterne videre fra Sorting til Departing?
+    I så fald, hvilken Queue passer så bedst? Giver det mest mening at fylde mere på Sorting? Eller skal vi rykke vores Wagon-objekter fra Sorting til Scratch, for at
+    lægge det bagerst i Sorting på et senere tidspunkt igen?
+
+
+    - Departure-fasen:
+
+    9 Queue objekter:
+        departureTrack1, departureTrack2, departureTrack3, departureTrack4, departureTrack5, departureTrack6, departureTrack7, departureTrack8
+        scratchTrack
+
+    De 8 departureTrack Queue-objekter, symboliserer de 8 spor hvor vi kan fylde vores togvogne på, og sende ud i verden. Alle Queue-objekter er dynamiske,
+    hvilket betyder de kan bruges til alle afgangene fleksibelt, alt afhægngigt af behovet. Denne fase indeholder også vores scratchTrack Queue, som giver os
+    mulighed for at sende tog tilbage bagerst i sortingTrack Queue-objektet, såfremt der er plads til det, og det giver mening at gruppere Wagon-objekterne
+    sammen der.
+
+
+
+    ----------
+    NEDBRYDNING AF LOGIK:
+    ----------
+
+    Udgangspunktet må være, at gruppere Wagon-objekterne fra ArrivalTracks sammen så vidt muligt, ud fra en logisk forfordeling. Dette kræver, at vi kigger på indholdet
+    i alle vores DepartureTracks, og finder ud af om der enten er en tom kø vi kan lægge noget i, eller om en af køerne indeholder noget identisk med det vi har til rådighed.
+
+    Jeg foreslår, at vi laver 3 ( 5? ) lister, med de ruter vi kan fylde tog på, nemlig:
+        {"Hamburg Harbour"}
+        {"Scandinavia"}
+        {"Duisburg", "Koln", "Stuttgart", "Munich"}
+        {"Berlin", "Leipzig", Nurnberg", "Munich"}
+        {"Hannover", "Kassel", "Frankfurt", "Stuttgart", "Munich"}
+
+
+
+    ----------
+    RANDOM NOTES:
+    ----------
+
+    Stuttgart, Munchen, Harbor, og Scandinavia er alle komplicerede at arbejde med - de to første grundet flere linjer der har dem som stop, de to sidste fordi de vil låse et spor
+    fuldstændigt for andre togvogne indtil køen bliver tømt igen.
+
+
+
+    ----------
+    GAMLE NOTER:
+    ----------
+
     Opret en liste (masterList) over alle 9 Queue objekter.
-    Kopier denne liste over i en ny liste (sortingList) over Queue-objekter, og fjern den ud fra udelukkelsesmetoden, ud fra de regler vi opretter for sorteringen.
+    Disse Queue objekter skal kopieres over i en ny liste (sortingList) over Queue-objekter, såfremt at de overholder der regler vi opretter for sorteringen.
 
     Når der kun er 1 mulighed tilbage i sortingList, så skal togvognen sættes ind i denne Queue. Listen skal cleares, og masterList skal kopieres over i sortingList igen.
 
@@ -16,19 +85,14 @@ public class HenriksNotes
 
     Pseudo kode:
 
-    if ( køen IKKE er tom )
+    if ( togvognens destination IKKE .equals destinationen på det sidst ankomne tog i en kø  )
+        Fjern Queue fra sortingList
 
-    if ( togvognens destination .equals destinationen på det sidst ankomne tog i en kø )
+    if ( køen IKKE er tom )
 
     if (  )
 
 
 
-
-
-    RANDOM NOTES:
-
-    Stuttgart, Munchen, Harbor, og Scandinavia er alle komplicerede at arbejde med - de to første grundet flere linjer der har dem som stop, de to sidste fordi de vil låse et spor
-    fuldstændigt for andre togvogne indtil køen bliver tømt igen.
      */
 }
