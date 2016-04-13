@@ -8,7 +8,7 @@ import java.util.Queue;
  */
 public class Hamburg
 {
-    Queue<Wagon> trackArrival= new LinkedList<>();
+    Queue<Wagon> trackArrival = new LinkedList<>();
 
     // Creates all of our tracks
     public Hamburg(){
