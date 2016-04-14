@@ -10,6 +10,7 @@ import java.util.List;
  */
 public class TrackList<T extends Comparable<? super T>> implements TrackQueueInterface<T>{
     List<T> trackList = new ArrayList<>();
+
     @Override
     public T findWagon(T itemToFind) {
         T itemReturn = null;

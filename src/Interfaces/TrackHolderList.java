@@ -16,7 +16,7 @@ public class TrackHolderList<T extends Comparable<? super T>> implements TrackQu
     }
 
     @Override
-    public T sendOfItem() {
+    public T nextItemInTrack() {
         return null;
     }
 

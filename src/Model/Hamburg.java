@@ -1,5 +1,8 @@
 package Model;
 
+import Interfaces.TrackList;
+import Interfaces.TrackQueueInterface;
+
 import java.util.LinkedList;
 import java.util.Queue;
 
@@ -8,6 +11,7 @@ import java.util.Queue;
  */
 public class Hamburg
 {
+    TrackQueueInterface<Wagon> trackArrival1 = new TrackList<>();
     Queue<Wagon> trackArrival = new LinkedList<>();
 
     // Creates all of our tracks
