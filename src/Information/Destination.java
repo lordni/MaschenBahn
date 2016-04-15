@@ -7,8 +7,8 @@ import java.util.Random;
  */
 public class Destination
 {
-    static String[] destinationList = {"Duisburg", "Koln", "Hannover", "Kassel", "Frankfurt", "Berlin", "Leipzig", "Nurnberg", "Stuttgart", "Munich"};
-    private static final int LENGTH = 10;
+    static String[] destinationList = {"Duisburg", "Koln", "Hannover", "Kassel", "Frankfurt", "Berlin", "Leipzig", "Nurnberg", "Stuttgart", "Munich", "Hamburg Harbour", "Scandinavia"};
+    private static final int LENGTH = 12;
 
     public static String getDestination() {
         Random random = new Random();
