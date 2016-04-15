@@ -1,5 +1,6 @@
 package Model;
 
+import Interfaces.TrackHolderList;
 import Interfaces.TrackList;
 import Interfaces.TrackQueueInterface;
 
@@ -11,7 +12,9 @@ import java.util.Queue;
  */
 public class Hamburg
 {
-    TrackQueueInterface<Wagon> trackArrival1 = new TrackList<>();
+    TrackQueueInterface<LinkedList<Wagon>> arrivalTrackList = new TrackHolderList<>();
+    TrackQueueInterface<TrackList<Wagon>> arraivalTrack1_Temp = new TrackList<>();
+
     Queue<Wagon> arrivalTrack1 = new LinkedList<>();
     Queue<Wagon> arrivalTrack2 = new LinkedList<>();
     Queue<Wagon> arrivalTrack3 = new LinkedList<>();
@@ -24,6 +27,8 @@ public class Hamburg
     Queue<Wagon> arrivalTrack10 = new LinkedList<>();
 
     Queue<Wagon> sortingTrack = new LinkedList<>();
+
+    TrackQueueInterface<TrackList<Wagon>> departureTrackList = new TrackHolderList<>();
 
     Queue<Wagon> departureTrack1 = new LinkedList<>();
     Queue<Wagon> departureTrack2 = new LinkedList<>();

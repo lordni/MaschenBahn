@@ -1,13 +1,11 @@
 package Model;
 
 import Information.Destination;
-import Information.WagonCargoType;
-import Information.WagonWeight;
 
 /**
  * Created by Henrik on 10-04-2016.
  */
-public class Wagon implements Comparable<Wagon>
+public class Wagon
 {
     private String destination;
     //private String cargoType;
@@ -24,10 +22,5 @@ public class Wagon implements Comparable<Wagon>
     public String toString()
     {
         return destination;
-    }
-
-    @Override
-    public int compareTo(Wagon o) {
-        return 0;
     }
 }

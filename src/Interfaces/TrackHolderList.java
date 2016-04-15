@@ -3,7 +3,7 @@ package Interfaces;
 /**
  * Created by lordni on 4/13/16.
  */
-public class TrackHolderList<T extends Comparable<? super T>> implements TrackQueueInterface<T>{
+public class TrackHolderList<T> implements TrackQueueInterface<T>{
 
     @Override
     public T findWagon(T itemToFind) {

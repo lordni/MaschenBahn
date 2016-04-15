@@ -8,14 +8,14 @@ import java.util.List;
 /**
  * Created by lordni on 4/13/16.
  */
-public class TrackList<T extends Comparable<? super T>> implements TrackQueueInterface<T>{
+public class TrackList<T> implements TrackQueueInterface<T>{
     List<T> trackList = new ArrayList<>();
 
     @Override
     public T findWagon(T itemToFind) {
         T itemReturn = null;
         for (T t: trackList) {
-            if (t.compareTo(itemToFind) == 0) {
+            if (t != null) {
                 itemReturn = t;
             }
         }
