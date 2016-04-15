@@ -12,18 +12,45 @@ import java.util.Queue;
 public class Hamburg
 {
     TrackQueueInterface<Wagon> trackArrival1 = new TrackList<>();
-    Queue<Wagon> trackArrival = new LinkedList<>();
+    Queue<Wagon> arrivalTrack1 = new LinkedList<>();
+    Queue<Wagon> arrivalTrack2 = new LinkedList<>();
+    Queue<Wagon> arrivalTrack3 = new LinkedList<>();
+    Queue<Wagon> arrivalTrack4 = new LinkedList<>();
+    Queue<Wagon> arrivalTrack5 = new LinkedList<>();
+    Queue<Wagon> arrivalTrack6 = new LinkedList<>();
+    Queue<Wagon> arrivalTrack7 = new LinkedList<>();
+    Queue<Wagon> arrivalTrack8 = new LinkedList<>();
+    Queue<Wagon> arrivalTrack9 = new LinkedList<>();
+    Queue<Wagon> arrivalTrack10 = new LinkedList<>();
 
-    // Creates all of our tracks
+    Queue<Wagon> sortingTrack = new LinkedList<>();
+
+    Queue<Wagon> departureTrack1 = new LinkedList<>();
+    Queue<Wagon> departureTrack2 = new LinkedList<>();
+    Queue<Wagon> departureTrack3 = new LinkedList<>();
+    Queue<Wagon> departureTrack4 = new LinkedList<>();
+    Queue<Wagon> departureTrack5 = new LinkedList<>();
+    Queue<Wagon> departureTrack6 = new LinkedList<>();
+    Queue<Wagon> departureTrack7 = new LinkedList<>();
+    Queue<Wagon> departureTrack8 = new LinkedList<>();
+
+    Queue<Wagon> scratchTrack = new LinkedList<>();
+
+    // Creates all of our wagons on
     public Hamburg(){
-        for (int i = 0; i < 100; i++){
-            trackArrival.offer(new Wagon());
+        for (int i = 0; i < 10; i++){
+            arrivalTrack1.offer(new Wagon());
         }
+    }
+
+    public void addWagonToArrivalTrack(int trackId)
+    {
+
     }
 
     public void showDetails() {
         int counter = 0;
-        for (Wagon wagon: trackArrival) {
+        for (Wagon wagon: arrivalTrack1) {
             if (counter%20 != 0 || counter == 0) {
                 System.out.print(wagon + ", ");
             } else {
