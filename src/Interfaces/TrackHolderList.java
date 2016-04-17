@@ -1,22 +1,27 @@
 package Interfaces;
 
+import java.util.ArrayList;
+import java.util.List;
+
 /**
  * Created by lordni on 4/13/16.
  */
 public class TrackHolderList<T> implements TrackQueueInterface<T>{
 
+    List<T> holderList = new ArrayList<>();
+
     @Override
-    public T findWagon(T itemToFind) {
+    public T find(T itemToFind) {
         return null;
     }
 
     @Override
-    public void addWagon(T item) {
-
+    public void add(T item) {
+        holderList.add(item);
     }
 
     @Override
-    public T nextItemInTrack() {
+    public T popNextItem() {
         return null;
     }
 

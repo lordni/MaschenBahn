@@ -1,8 +1,6 @@
 package Interfaces;
 
 import java.util.ArrayList;
-import java.util.Collection;
-import java.util.Iterator;
 import java.util.List;
 
 /**
@@ -12,7 +10,7 @@ public class TrackList<T> implements TrackQueueInterface<T>{
     List<T> trackList = new ArrayList<>();
 
     @Override
-    public T findWagon(T itemToFind) {
+    public T find(T itemToFind) {
         T itemReturn = null;
         for (T t: trackList) {
             if (t != null) {
@@ -23,12 +21,12 @@ public class TrackList<T> implements TrackQueueInterface<T>{
     }
 
     @Override
-    public void addWagon(T item) {
+    public void add(T item) {
         trackList.add(item);
     }
 
     @Override
-    public T nextItemInTrack() {
+    public T popNextItem() {
         return null;
     }
 
