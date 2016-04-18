@@ -6,8 +6,14 @@ import java.util.List;
 /**
  * Created by lordni on 4/13/16.
  */
-public class TrackList<T> implements TrackQueueInterface<T>{
-    List<T> trackList = new ArrayList<>();
+public class TrackList<T extends Comparable<? super T>> implements TrackListInterface<T>{
+    private String trackName;
+    private List<T> trackList;
+
+    public TrackList(String trackName) {
+        trackList = new ArrayList<>();
+        this.trackName = trackName;
+    }
 
     @Override
     public T find(T itemToFind) {
