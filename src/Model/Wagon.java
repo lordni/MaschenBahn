@@ -1,26 +1,27 @@
 package Model;
 
 import Information.Destination;
+import Information.DestinationDispatcher;
 
 /**
  * Created by Henrik on 10-04-2016.
  */
-public class Wagon
+public class Wagon extends Object
 {
-    private String destination;
-    //private String cargoType;
-    //private String weight;
+    public Destination getInformation() {
+        return information;
+    }
+
+    private Destination information;
 
     // Creates all of our wagons
     public Wagon(){
-        destination = Destination.getDestination();
-        //cargoType = WagonCargoType.getCargoType();
-        //weight = WagonWeight.getWeight();
+        information = DestinationDispatcher.getADestination();
     }
 
     @Override
     public String toString()
     {
-        return destination;
+        return information.getName();
     }
 }

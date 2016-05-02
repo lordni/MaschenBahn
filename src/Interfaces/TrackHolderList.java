@@ -8,7 +8,7 @@ import java.util.List;
  */
 public class TrackHolderList<T> implements TrackHolderInterface<T>{
 
-    List<T> holderList = new ArrayList<>();
+    private List<T> holderList = new ArrayList<>();
 
     @Override
     public T find(T itemToFind) {
@@ -18,5 +18,10 @@ public class TrackHolderList<T> implements TrackHolderInterface<T>{
     @Override
     public void add(T item) {
         holderList.add(item);
+    }
+
+    @Override
+    public List<T> getList() {
+        return holderList;
     }
 }

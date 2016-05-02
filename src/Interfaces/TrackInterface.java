@@ -1,6 +1,5 @@
 package Interfaces;
 
-import java.util.Collection;
 import java.util.List;
 
 /**
@@ -9,4 +8,5 @@ import java.util.List;
 public interface TrackInterface<T> {
     public T find(T itemToFind);
     public void add(T item);
+    public List<T> getList();
 }
